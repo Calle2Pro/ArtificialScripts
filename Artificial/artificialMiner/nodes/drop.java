@@ -27,21 +27,20 @@ public class drop extends Job {
 
     @Override
     public void run() {
-        if (!atMine() && !Inventory.isFull()) {
-            while (Calculations.distanceTo(artificialMiner.mineTile) > Random.nextInt(4, 7)) {
-                Walking.walkTo(artificialMiner.mineTile);
+        if (artificialMiner.banking == false) {
+            if (!atMine() && !Inventory.isFull()) {
+                while (Calculations.distanceTo(artificialMiner.mineTile) > Random.nextInt(4, 7)) {
+                    Walking.walkTo(artificialMiner.mineTile);
+                }
             }
-        }
-        for (int item = 0; item < 100; item++) {
-            if (Inventory.contains(artificialMiner.drop))
-                Inventory.dropAll(artificialMiner.drop);
-            SleepTillThere();
+            for (int item = 0; item < 100; item++) {
+                if (Inventory.contains(artificialMiner.drop))
+                    Inventory.dropAll(artificialMiner.drop);
+                for (int i = 0; i < 10 && Players.getLocal().isMoving(); i++, Time
+                        .sleep(300, 450))
+                    ;
+            }
         }
     }
 
-    public void SleepTillThere() {
-        for (int i = 0; i < 10 && Players.getLocal().isMoving(); i++, Time
-                .sleep(300, 450))
-            ;
-    }
 }

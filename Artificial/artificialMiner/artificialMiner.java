@@ -20,14 +20,13 @@ import java.awt.*;
 
 public class artificialMiner extends ShadowScript implements PaintListener {
     public static int[] toMine;
-    public static String toMines;
     public static int drop;
     public static boolean guiStart = true;
-    static Tile bankTile;
-    static Tile mineTile;
-    static Area bankArea;
-    static Area mineArea;
-    static boolean banking;
+    public static Tile bankTile;
+    public static Tile mineTile;
+    public static Area bankArea;
+    public static Area mineArea;
+    public static boolean banking;
     private final Job[] jobs = {new antiban(), new mine(), new artificialMiner.nodes.drop(), new bank()};
     Gui2 g = new Gui2();
 

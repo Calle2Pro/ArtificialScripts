@@ -30,17 +30,19 @@ public class bank extends Job {
 
     @Override
     public void run() {
-        if (atMine() && Inventory.isFull() && artificialMiner.banking) {
-            while (Calculations.distanceTo(bankTile) > Random.nextInt(4, 7)) {
-                Walking.walkTo(bankTile);
+        if (artificialMiner.banking == true) {
+            if (atMine() && Inventory.isFull() && artificialMiner.banking) {
+                while (Calculations.distanceTo(bankTile) > Random.nextInt(4, 7)) {
+                    Walking.walkTo(bankTile);
+                }
             }
-        }
-        if (atBank() && Inventory.isFull()) {
-            if (Bank.isOpen()) {
-                Bank.deposit(drop, 28);
-                Time.sleep(Random.nextInt(100, 200));
-            } else {
-                Bank.open();
+            if (atBank() && Inventory.isFull()) {
+                if (Bank.isOpen()) {
+                    Bank.deposit(drop, 28);
+                    Time.sleep(Random.nextInt(100, 200));
+                } else {
+                    Bank.open();
+                }
             }
         }
     }

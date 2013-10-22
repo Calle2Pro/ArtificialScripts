@@ -128,12 +128,10 @@ public class Gui2 extends javax.swing.JFrame {
         if (str.equals("Copper")) {
             artificialMiner.toMine = new int[]{2551, 2550};
             artificialMiner.drop = 436;
-            artificialMiner.toMines = "Copper";
         } else {
             if (str.equals("Tin")) {
                 artificialMiner.toMine = new int[]{13717, 13718};
                 artificialMiner.drop = 438;
-                artificialMiner.toMines = "Tin";
             } else {
                 if (str.equals("Clay")) {
                     artificialMiner.toMine = new int[]{1, 2, 3};
