@@ -30,8 +30,8 @@ public class MysteriousMan extends RandomEvent {
         if (dude.isOnScreen()) {
             dude.interact("Talk to");
             Time.sleep(Random.nextInt(100, 150));
-            // Mouse.move(100, 200); // Moves to Contiune Button
-            // Mouse.click(100, 200); // Clicks Continue?
+            Widgets.canContinue();
+            Widgets.clickContinue();
 
         }
         return Random.nextInt(100, 150);  //To change body of implemented methods use File | Settings | File Templates.
